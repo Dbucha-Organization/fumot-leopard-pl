@@ -2,6 +2,12 @@
 const ham = document.querySelector(".hamburger");
 const menu = document.querySelector(".mobile-menu-overlay");
 const menuLinks = document.querySelectorAll(".mobile-links a");
+const externalLinks = document.querySelectorAll('a[href^="http"]');
+
+externalLinks.forEach((link) => {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+});
 
 if (ham && menu) {
     ham.addEventListener("click", () => {
